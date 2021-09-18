@@ -1,0 +1,138 @@
+form {
+   width: 50%;
+}
+
+form fieldset {
+   height: 100vh;
+   padding: 2rem;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   background-color: var(--bg-green);
+
+   border: none;
+}
+
+form#login-form fieldset {
+   border-top-right-radius: 2rem;
+   border-bottom-right-radius: 2rem;
+}
+
+form#register-form fieldset {
+   border-top-left-radius: 2rem;
+   border-bottom-left-radius: 2rem;
+}
+
+form fieldset h3 {
+   font-size: 2.4rem;
+   font-weight: 300;
+
+   color: var(--light-text);
+}
+
+form div.separator {
+   display: block;
+
+   width: 100%;
+   height: 3px;
+
+   margin: .1rem auto 1.2rem auto;
+}
+
+form#login-form div.separator {
+   background-color: var(--light-green);
+}
+
+form#register-form div.separator {
+   background-color: var(--yellow);
+}
+
+form label {
+   display: block;
+
+   font-size: 1.4rem;
+   font-weight: 300;
+
+   margin-left: 0.5rem;
+   margin-bottom: 0.2rem;
+
+   color: var(--light-text);
+}
+
+form .input-container {
+   margin-top: 2rem;
+}
+
+form .input-wrapper {
+   margin-bottom: 1.2rem;
+}
+
+form .input-wrapper input {
+   width: 450px;
+   height: 50px;
+   padding: 4%;
+
+   font-size: 1.3rem;
+   font-weight: 400;
+
+   border-radius: 1rem;
+   border: none;
+
+   color: var(--bg-green);
+
+   outline: none;
+}
+
+form .input-wrapper > div:last-of-type {
+   display: flex;
+   align-items: center;
+
+   margin-top: 1.2rem;
+   margin-left: 4px;
+}
+
+form .input-wrapper > div:last-of-type input {
+   width: 24px;
+   height: 24px;
+
+   padding: 0;
+   border-radius: none;
+}
+
+form .input-wrapper > div:last-of-type span {
+   color: var(--light-text);
+
+   margin-left: .5rem;
+
+   font-size: 1.1rem;
+}
+
+form p {
+   text-align: center;
+
+   color: var(--light-text);
+
+   font-size: 1.2rem;
+   font-weight: 500;
+   margin-top: 1.4rem;
+}
+
+#register-form p > a {
+   color: var(--yellow);
+   transition: color .3s;
+}
+
+#login-form p > a {
+   color: var(--light-green);
+   transition: color .3s;
+}
+
+form span.disclaimer {
+   color: var(--red-times);
+   height: 20px;
+   font-size: 1.1rem;
+   margin: 0 0px .7rem 0px;
+}

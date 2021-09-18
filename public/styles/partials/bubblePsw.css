@@ -1,0 +1,64 @@
+:root {
+   --bubble-bg: rgb(184, 187, 187, .97);
+   --green-check: #1ABC5B;
+}
+
+.hidden {
+   display: none;
+}
+
+.bubble {
+   position: absolute;
+
+   right: 2rem;
+   margin-top: 1.4rem;
+   font-size: 1rem;
+   font-weight: 500;
+   width: 310px;
+   background: var(--bubble-bg);
+   color: var(--bg-green);
+   border-radius: 2rem;
+   padding: 1rem;
+}
+
+.bubble-top-left:before {
+   content: "";
+   width: 0px;
+   height: 0px;
+   position: absolute;
+
+   border-left: 22px solid transparent;
+   border-right: 22px solid transparent;
+   border-top: 22px solid transparent;
+   border-bottom: 16px solid var(--bubble-bg);
+
+   left: 4rem;
+   top: -38px;
+}
+
+.bubble > p{
+   text-align: left;
+   color: var(--bg-green);
+   font-size: 1rem;
+}
+
+.bubble ul {
+   list-style-type: none;
+}
+
+.bubble ul li {
+   margin-top: 2px;
+}
+
+.bubble li i {
+   width: 20px;
+   font-size: 1rem;
+}
+
+.bubble i.fa-check {
+   color: var(--green-check);
+}
+
+.bubble i.fa-times {
+   color: var(--red-times);
+}

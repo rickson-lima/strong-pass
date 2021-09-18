@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Redressed&display=swap"
+      rel="stylesheet">
+
+   <link rel="stylesheet" href="styles/main.css">
+   <link rel="stylesheet" href="styles/partials/form.css">
+   <link rel="stylesheet" href="styles/partials/buttons.css">
+   <link rel="stylesheet" href="styles/partials/bubblePsw.css">
+
+   <title>Project Livrary | Cadastrar</title>
+</head>
+
+<body>
+   <main id="register-page">
+      <div class="container">
+         <div>
+            <h2>Bem-vindo <span>ao</span></h2>
+            <h1>Project <span>Livrary</span></h1>
+         </div>
+
+         <img src="img/register-page.jpg" alt="">
+      </div>
+
+      <form action="" method="POST" id="register-form">
+         <fieldset>
+            <div class="title-container">
+               <h3>Cadastre-se</h3>
+               <div class="separator"></div>
+            </div>
+            <!-- title-container -->
+
+            <div class="input-container">
+               <div class="input-wrapper">
+                  <label for="nome">Nome</label>
+                  <input type="text" id="name" name="nome">
+               </div>
+               <!-- input-wraper -->
+
+               <div class="input-wrapper">
+                  <label for="nome">Email</label>
+                  <input type="text" id="email" name="email">
+               </div>
+               <!-- input-wraper -->
+
+               <div class="input-wrapper">
+                  <label for="nome">Senha</label>
+                  <input type="password" autocomplete="off" id="password" name="senha" onfocus="toggleBubblePsw()"
+                     onblur="toggleBubblePsw()">
+
+                  <div class="bubble bubble-top-left hidden" id="bubble">
+                     <p>A senha deve conter pelo menos:</p>
+                     <ul>
+                        <!-- <i class="fas fa-check"></i> -->
+                        <!-- <i class="fas fa-times"></i> -->
+                        <!-- <i class="fas fa-minus"></i> -->
+                        <li>
+                           <i class="fas fa-minus" data-key="tamanho_minimo"></i> Oito caracteres
+                        </li>
+                        <li>
+                           <i class="fas fa-minus" data-key="caractere_numerico"></i> Um número
+                        </li>
+                        <li>
+                           <i class="fas fa-minus" data-key="caractere_minusculo"></i> Uma letra minúscula
+                        </li>
+                        <li>
+                           <i class="fas fa-minus" data-key="caractere_maiusculo"></i> Uma letra maiúscula
+                        </li>
+                        <li>
+                           <i class="fas fa-minus" data-key="caractere_especial"></i> Um caractere especial (!#@_)
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- bubble -->
+
+                  <div>
+                     <input type="checkbox" onclick="togglePassword()">
+                     <span>Mostrar senha</span>
+                  </div>
+               </div>
+               <!-- input-wraper -->
+            </div>
+            <!-- input-container -->
+
+            <span class="disclaimer"></span>
+
+            <button type="button">Cadastrar</button>
+
+            <p>
+               Já tem um conta?
+               <a href="/entrar">Fazer login</a>
+            </p>
+         </fieldset>
+      </form>
+   </main>
+
+   <script src="scripts/signUpReq.js" defer type="module"></script>
+   <script>
+      function togglePassword() {
+         const passwordEl = document.getElementById('password')
+         const newType = passwordEl.getAttribute('type') === 'password' ? 'text' : 'password'
+
+         passwordEl.setAttribute('type', newType)
+      }
+
+      function toggleBubblePsw() {
+         const bubbleEl = document.getElementById('bubble')
+         bubbleEl.classList.toggle('hidden')
+      }
+
+      function repositionBubbleElement() {
+         const passwordEl = document.getElementById('password')
+         const elementTop = passwordEl.offsetTop
+         const elementBottom = elementTop + passwordEl.offsetHeight
+
+         const bubbleEl = document.getElementById('bubble')
+         bubbleEl.style.top = elementBottom + 'px';
+      }
+
+      window.addEventListener('rezize', repositionBubbleElement)
+   </script>
+</body>
+
+</html>

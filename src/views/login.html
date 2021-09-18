@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Redressed&display=swap"
+      rel="stylesheet">
+
+   <link rel="stylesheet" href="styles/main.css">
+   <link rel="stylesheet" href="styles/partials/form.css">
+   <link rel="stylesheet" href="styles/partials/buttons.css">
+
+   <title>Project Livrary | Entrar</title>
+</head>
+
+<body>
+   <main id="login-page">
+      <div class="container">
+         <div>
+            <h2>Bem-vindo <span>ao</span></h2>
+            <h1>Project <span>Livrary</span></h1>
+         </div>
+
+         <img src="img/login-page.jpg" alt="">
+      </div>
+
+      <form action="" method="POST" id="login-form">
+         <fieldset>
+            <div class="title-container">
+               <h3>Fazer login</h3>
+               <div class="separator"></div>
+            </div>
+            <!-- title-container -->
+
+            <div class="input-container">
+               <div class="input-wrapper">
+                  <label for="nome">Email</label>
+                  <input type="text" id="email" name="email" onclick="clearDisclaimer()">
+               </div>
+               <!-- input-wraper -->
+
+               <div class="input-wrapper">
+                  <label for="nome">Senha</label>
+                  <input type="password" autocomplete="off" id="password" name="senha" onclick="clearDisclaimer()">
+
+                  <div>
+                     <input type="checkbox" onclick="togglePassword()">
+                     <span>Mostrar senha</span>
+                  </div>
+               </div>
+               <!-- input-wraper -->
+            </div>
+            <!-- input-container -->
+
+            <span class="disclaimer"></span>
+
+            <button type="button">Entrar</button>
+
+            <p>
+               Já tem um conta?
+               <a href="/cadastrar">Cadastre-se</a>
+            </p>
+         </fieldset>
+      </form>
+   </main>
+
+   <script src="scripts/signInReq.js" defer type="module"></script>
+   <script>
+      function clearDisclaimer() {
+         const disclaimerEl = document.querySelector('span.disclaimer')
+         disclaimerEl.innerHTML = ''
+      }
+
+      function togglePassword() {
+         const passwordEl = document.getElementById('password')
+         const newType = passwordEl.getAttribute('type') === 'password' ? 'text' : 'password'
+
+         passwordEl.setAttribute('type', newType)
+      }
+   </script>
+</body>
+
+</html>
